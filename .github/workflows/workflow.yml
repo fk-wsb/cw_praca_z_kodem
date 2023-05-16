@@ -1,0 +1,35 @@
+name: Python Version and Pylint Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  display_python_version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Display Python version
+        run: python --version
+
+  pylint_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x # Wybierz odpowiednią wersję Pythona, np. 3.8, 3.9 itd.
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Pylint
+        run: pylint app.py
