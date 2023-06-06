@@ -1,6 +1,6 @@
 # cw_praca_z_kodem
 
-Opis projektu:
+## Opis projektu:
 
 Aplikacja webowa napisaną w języku Python przy użyciu frameworka Flask
 
